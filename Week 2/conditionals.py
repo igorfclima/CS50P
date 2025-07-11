@@ -1,5 +1,5 @@
 x = int(input("Tell me x: "))
-y = int(input("Tell me y: "))
+y = int(input("Tell me y:"))
 
 if x > y:
     print("X are greater than y.")
