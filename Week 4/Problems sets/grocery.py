@@ -10,5 +10,5 @@ def groceries():
                 break
     sorted_items = sorted(cart.items())
     for fruits,quant in sorted_items.items():
-        print(f"{quant} {fruits}")
+        print(f"{quant} {fruits} ")
 groceries()
