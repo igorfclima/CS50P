@@ -3,7 +3,30 @@ from random import randint
 
 def main():
     level = get_level()
-    generate_integer(level)
+    score = 0
+    num_problems = 10
+    for _ in range(num_problems):
+        x = generate_integer(level)
+        y = generate_integer(level)
+        correct_answer = x + y
+
+        attemps = 0
+        while attemps  < 3:
+            try:
+                answer = int(input(f"{x} + {y} = "))
+
+                if answer == correct_answer:
+                    score += 1
+                    break
+                else:
+                    print("EEE")
+                    attemps += 1
+            except ValueError:
+                print("EEE")
+                attempts += 1
+        else:
+            print(f"{x} + {y} = {correct_answer}")
+    print(f"Score: {score}")
 
 
 def get_level():
@@ -18,37 +41,14 @@ def get_level():
 
 
 def generate_integer(level):
-    # Randomly generates ten (10) math problems formatted as X + Y = , wherein each of X and Y is a non-negative integer with digits. No need to support operations other than addition (+)
-    x_numbers = []
-    y_numbers = []
-    results = []
-
-    for i in range(10):
-        if level == 1:
-            x = randint(0,9)
-            y = randint(0,9)
-        elif level == 2:
-            x = randint(10,99)
-            y = randint(10,99)
-        else:
-            x = randint(100,999)
-            y = randint(100,999)
-        x_numbers.append(x)
-        y_numbers.append(y)
-        results.append(x + y)
-    # Prompts the user to solve each of those problems. If an answer is not correct (or not even a number), the program should output EEE and prompt the user again
-    for i in range(len(results)):
-        points = 0
-        while True:
-            guess = int(input(f"{x_numbers[i]} + {y_numbers[i]} = "))
-
-            if guess == results[i]:
-                points += 1
-                break
-            else:
-                print("EEE")
-        if i == 10:
-            print(f"Score: {points}")
+    if level == 1:
+        return randint(0,9)
+    elif level == 2:
+        return randint(10,99)
+    elif level == 3:
+        return randint(100,999)
+    else:
+        raise ValueError
 
 
 if __name__ == "__main__":
