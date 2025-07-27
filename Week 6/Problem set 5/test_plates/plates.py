@@ -6,22 +6,24 @@ def main():
         print("Invalid")
 
 
-def is_valid(s):
-    if not (2 <= len(s) <= 6):
+def is_valid(str):
+    if not (2 <= len(str) <= 6):
         return False
-    if not s[0:2].isalpha():
+    if not str[0:2].isalpha():
         return False
-    if not s.isalnum():
+    if not str.isalnum():
         return False
     found_number = False
-    for i in range(len(s)):
-        if s[i].isdigit():
-            if not found_number and s[i] == '0':
+    for i in range(len(str)):
+        if str[i].isdigit():
+            if not found_number and str[i] == '0':
                 return False
             found_number = True
-            if not s[i:].isdigit():
+            if not str[i:].isdigit():
                 return False
             break
     return True
 
-main()
+
+if __name__  == "__main__":
+    main()
