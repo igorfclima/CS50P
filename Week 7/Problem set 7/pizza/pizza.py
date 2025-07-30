@@ -1,6 +1,6 @@
 import sys
 import csv
-from tabulate import tabulate
+from tabulate import tabulate #type: ignore
 
 def main():
     if len(sys.argv) < 2:
