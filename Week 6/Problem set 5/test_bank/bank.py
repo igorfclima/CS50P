@@ -1,5 +1,5 @@
 def main():
-    greeting = input("Greeting: ")
+    greeting = input("Greeting:")
     cents = value(greeting)
     print(f"${cents}")
 
