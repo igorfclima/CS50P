@@ -46,7 +46,5 @@ def main():
             f"${pizza['large']:.2f}"
         ])
 
-    print(tabulate(formatted_rows, headers=headers, tablefmt="grid"))
-
 if __name__ == "__main__":
     main()
